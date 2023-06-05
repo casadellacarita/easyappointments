@@ -58,6 +58,13 @@ class Appointments extends EA_Controller {
                 return;
             }
 
+            $user_id = $this->session->userdata('user_id');
+
+            if ($user_id == FALSE)
+            {               
+                header('Location: ' . site_url('user/login'));               
+            }
+
             $available_services = $this->services_model->get_available_services();
             $available_providers = $this->providers_model->get_available_providers();
             $company_name = $this->settings_model->get_setting('company_name');
