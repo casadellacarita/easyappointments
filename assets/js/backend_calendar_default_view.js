@@ -1558,12 +1558,13 @@ window.BackendCalendarDefaultView = window.BackendCalendarDefaultView || {};
         }
 
         // Check permissions.
-        if (GlobalVariables.user.role_slug === Backend.DB_SLUG_PROVIDER) {
-            $('#select-filter-item optgroup:eq(0)')
-                .find('option[value="' + GlobalVariables.user.id + '"]')
-                .prop('selected', true);
-            $('#select-filter-item').prop('disabled', true);
-        }
+        //allow to view alla appointments
+        //if (GlobalVariables.user.role_slug === Backend.DB_SLUG_PROVIDER) {
+        //    $('#select-filter-item optgroup:eq(0)')
+        //        .find('option[value="' + GlobalVariables.user.id + '"]')
+        //        .prop('selected', true);
+        //    $('#select-filter-item').prop('disabled', true);
+        //}
 
         if (GlobalVariables.user.role_slug === Backend.DB_SLUG_SECRETARY) {
             // Remove the providers that are not connected to the secretary.
